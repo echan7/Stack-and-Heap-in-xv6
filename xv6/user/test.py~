@@ -1,0 +1,12 @@
+f = open("lots.c", 'w')
+
+f.write('#include \"types.h\"\n#include \"stat.h\"\n#include \"user.h\"\n')
+f.write('int\nmain(int argc, char *argv[])\n{\n')
+
+for idx in range(1,1030):
+    var = '_'
+    var += str(idx)
+
+    f.write('    int {} = {};\n    {}++;\n'.format(var, str(idx), var));
+
+f.write('exit();\n}')
